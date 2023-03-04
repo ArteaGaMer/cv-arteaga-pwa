@@ -122,53 +122,49 @@ var urlsToCache = [
         './windows11/Square44x44Logo.altform-lightunplated_targetsize-256.png',
 ];
 
-self.addEventListener('install', e=>{
-
-    e.waitUntil(
-        caches.open(CACHE_NAME)
-        .then(cache => {
-            return cache.addAll(urlsToCache)
-                        .then(() =>{
-                            self.skipWaiting(); 
-                        })
-        })
-        .catch(err=>console.log('No se ha registrado el cache', err))
-);
-});
-//Evento activate
-//Este evento permite que la aplicacion funcione offline
-self.addEventListener('activate',e => {
-    const cacheWhitelist = [CACHE_NAME];
-
-    //Que el evento espere o que termine de ejecutar el cache
-    e.waitUntil(
-        caches.keys()
-                .then(cacheNames=>{
-                return Promise.all(
-                    cacheNames.map(cacheName =>{
-                        if(cacheWhitelist.indexOf(cacheName)== -1)
-                        {
-                            //Borrar los elementos que no se necesiten
-                            return cache.delete(cacheName);
-                        }
-                    })
-                );
-               })
-               .then(()=> {
-                self.clients.claim(); //activa la cache en el dispositivo
-               })
-    );
-
+self.addEventListener("install", (e) => {
+  e.waitUntil(
+    caches
+      .open(cache_NAME)
+      .then((cache) => {
+        return cache.addAll(urlsToCache).then(() => {
+          self.skipWaiting();
+        });
+      })
+      .catch((err) => console.log("No se ha registrado el cache"), err)
+  );
 });
 
-self.addEventListener('fetch',e => {
-    e.respondWith(
-        caches.match(e.request)
-                .then (res => {
-                    if(res){
-                        return res;
-                    }
-                    return fetch(e.request); //hago petición al servidor en caso de que no este en cache
-                })
-    );
+//Event activate
+self.addEventListener("activate", (e) => {
+  const cacheWhiteList = [cache_NAME];
+  e.waitUntil(
+    caches.keys()
+      .then((cacheNames) => {
+        return Promise.all(
+          cacheNames.map((cacheNames) => {
+            if (cacheWhiteList.indexOf(cacheName) == -1) {
+              return cache.delete(cacheNames);
+            }
+          })
+        );
+      })
+      .then(() => {
+        self.clients.claim();
+      })
+  );
+});
+
+
+//Event fetch
+self.addEventListener("fetch", (e) => {
+  e.respondWith(
+    caches.match(e.request)
+    .then(res => {
+      if (res) {
+        return res;
+      }
+      return fetch(e.request);
+    })
+  );
 });
