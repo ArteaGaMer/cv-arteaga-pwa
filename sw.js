@@ -124,8 +124,7 @@ var urlsToCache = [
 
 self.addEventListener("install", (e) => {
   e.waitUntil(
-    caches
-      .open(CACHE_NAME)
+    caches.open(CACHE_NAME)
       .then((cache) => {
         return cache.addAll(urlsToCache).then(() => {
           self.skipWaiting();
@@ -135,7 +134,8 @@ self.addEventListener("install", (e) => {
   );
 });
 
-//Event activate
+//Evento activate
+//Este evento permite que la aplicacion funcione offline
 self.addEventListener("activate", (e) => {
   const cacheWhiteList = [CACHE_NAME];
   e.waitUntil(
@@ -144,13 +144,14 @@ self.addEventListener("activate", (e) => {
         return Promise.all(
           cacheNames.map((cacheNames) => {
             if (cacheWhiteList.indexOf(cacheNames) == -1) {
+              //Borrar los elementos que no se necesiten
               return cache.delete(cacheNames);
             }
           })
         );
       })
       .then(() => {
-        self.clients.claim();
+        self.clients.claim(); //activa la cache en el dispositivo
       })
   );
 });
@@ -164,7 +165,7 @@ self.addEventListener("fetch", (e) => {
       if (res) {
         return res;
       }
-      return fetch(e.request);
+      return fetch(e.request); //hago petición al servidor en caso de que no este en cache
     })
   );
 });
