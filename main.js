@@ -1,14 +1,14 @@
 //Cargando Service Worker
-if('serviceWorker' in navigator) 
+if('serviceWorker' in navigator)
 {
-    console.log('Puedes usar el Service Worker');
-    //Configuración del Service Worker
-    navigator.serviceWorker.register('/sw.js')  
-        .then(res=>console.log('SW cargando correctamente', res))
-        .catch(err=>console.log('Service worker no se ha podido registrar', err));
+    console.log("Puedes usar el service worker");
+
+    navigator.serviceWorker.register('./sw.js')
+                    .then(res => console.log("SW cargado correctamente",res))
+                    .catch(err => console.log("Service Worker No se ha podido registrar",err));
 
 }
 else
 {
-    console.log('Service worker no se puede usar');
+    console.log("No se puede usar el service worker");
 }
