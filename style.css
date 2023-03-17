@@ -173,4 +173,41 @@ footer {
     margin: 0 auto;
     max-width: 600px;
   }
+  /* Estilos para el encabezado de la sección */
+#education h2 {
+	font-size: 36px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	color: #1a1a1a;
+	text-align: center;
+  }
+  
+  /* Estilos para la lista de educación */
+  #education ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+  
+  /* Estilos para cada elemento de la lista */
+  #education ul li {
+	border-bottom: 1px solid #ccc;
+	padding: 20px 0;
+  }
+  
+  /* Estilos para los títulos de cada elemento de la lista */
+  #education ul li h3 {
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	color: #1a1a1a;
+  }
+  
+  /* Estilos para la información de cada elemento de la lista */
+  #education ul li p {
+	font-size: 16px;
+	margin-bottom: 10px;
+	color: #4d4d4d;
+	line-height: 1.5;
+  }
   
