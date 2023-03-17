@@ -172,6 +172,7 @@ footer {
     line-height: 1.5;
     margin: 0 auto;
     max-width: 600px;
+	border-bottom: 2px solid #1a1a1a;
   }
   /* Estilos para el encabezado de la sección */
 #education h2 {
