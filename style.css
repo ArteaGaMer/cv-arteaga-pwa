@@ -160,11 +160,17 @@ footer {
     text-align: center;
   }
   #objetivo-profesional h2 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #1a1a1a;
-    border-bottom: 2px solid #1a1a1a;
+	font-size: 28px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	color: #1a1a1a;
+	display: inline-block;
+  }
+  
+  #objetivo-profesional h2 span {
+	display: block;
+	border-bottom: 2px solid #1a1a1a;
+	margin-top: 5px;
   }
   #objetivo-profesional p {
     font-size: 18px;
