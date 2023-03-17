@@ -153,6 +153,24 @@ footer {
 	line-height: 1.5;
 	margin-bottom: 0;
   }
-  
+  #objetivo-profesional {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  #objetivo-profesional h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+  }
+  #objetivo-profesional p {
+    font-size: 18px;
+    color: #4d4d4d;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 600px;
+  }
   
   
