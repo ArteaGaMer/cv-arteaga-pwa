@@ -40,3 +40,32 @@ footer {
 	padding: 20px;
 	text-align: center;
 }
+.contact-card {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	margin: 0 auto;
+	max-width: 400px;
+	text-align: center;
+  }
+  
+  .contact-card h2 {
+	font-size: 24px;
+	margin-bottom: 10px;
+	color: #333;
+  }
+  
+  .contact-card p {
+	font-size: 18px;
+	margin: 10px 0;
+	color: #333;
+  }
+  
+  .contact-card i {
+	margin-right: 10px;
+	color: #1abc9c;
+  }
+  
+  
+  
