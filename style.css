@@ -164,7 +164,6 @@ footer {
     font-weight: bold;
     margin-bottom: 20px;
     color: #1a1a1a;
-    border-bottom: 2px solid #1a1a1a;
   }
   #objetivo-profesional p {
     font-size: 18px;
@@ -173,6 +172,7 @@ footer {
     margin: 0 auto;
     max-width: 600px;
 	border-bottom: 2px solid #1a1a1a;
+	border-top: 2px solid #1a1a1a;
   }
   /* Estilos para el encabezado de la sección */
 #education h2 {
